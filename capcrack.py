@@ -37,6 +37,10 @@ def check_cap_format(cap_file):
 # Hàm dò mật khẩu theo chuẩn cũ
 def crack_cap_old(cap_file, dict_file):
   found = False
+  total_words = 0
+  with open(dict_file, "r") as f_dict:
+    for word in f_dict:
+      total_words += 1
   with open(cap_file, "rb") as f_cap:
     cap_data = f_cap.read()
   with open(dict_file, "r") as f_dict:
@@ -59,6 +63,10 @@ def crack_cap_old(cap_file, dict_file):
 # Hàm dò mật khẩu theo chuẩn mới
 def crack_cap_new(cap_file, dict_file):
   found = False
+  total_words = 0
+  with open(dict_file, "r") as f_dict:
+    for word in f_dict:
+      total_words += 1
   with open(cap_file, "rb") as f_cap:
     cap_data = f_cap.read()
   with open(dict_file, "r") as f_dict:
